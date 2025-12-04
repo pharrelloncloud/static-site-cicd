@@ -63,11 +63,13 @@ All essential permissions for a deployment IAM role for CloudFront & a static pa
 
 ## Home page (Static Page)
 
-![HomePage]
+![HomePage](<img width="1919" height="1147" alt="project1_website" src="https://github.com/user-attachments/assets/e26bac40-95aa-4847-ae6c-9d3e2a6eed11" />)
+
 
 ## CI/CD Successful Pipeline
 
-![Pipeline]
+![Pipeline](<img width="1919" height="1147" alt="project1_githubactions" src="https://github.com/user-attachments/assets/eb7a13d6-8627-4c75-a4f6-0ef9ac091995" />)
+
 
 # 🧩 Future Improvements
 
@@ -78,4 +80,5 @@ All essential permissions for a deployment IAM role for CloudFront & a static pa
 - Add animations
 
 - Replace static site with React + CI/CD
+
 
