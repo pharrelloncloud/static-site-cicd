@@ -18,7 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS-ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync files to S3 bucket ## Syncs the repository files to my S3 bucket, excluding the .github directory.
         run: |
