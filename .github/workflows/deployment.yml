@@ -1,0 +1,29 @@
+name: Deployinga static site to s3 bucket
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository ## Check out the repository code and files makes them available for the workflow to use.
+        uses: actions/checkout@v4
+
+      - name: Configuring AWS credentials ## Configures the AWS CLI with the provided credentials and region.
+        uses: aws-actions/configure-aws-credentials@v4 ## Uses the AWS Actions to set up AWS credentials for AWS CLI commands.
+        with:
+          aws-access-key-id: ${{ secrets.AWS-ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Sync files to S3 bucket ## Syncs the repository files to my S3 bucket, excluding the .github directory.
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET }} --exclude ".github/*" --delete 
+
+      - name: Invalidate CloudFront Cache ## Invalidates the CloudFront distribution cache to ensure the latest content is served.
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"    
