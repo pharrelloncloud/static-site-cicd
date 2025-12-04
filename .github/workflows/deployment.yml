@@ -1,4 +1,4 @@
-name: Deployinga static site to s3 bucket
+name: Deploying a static site to s3 bucket
 
 on:
   push:
