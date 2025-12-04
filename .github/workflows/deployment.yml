@@ -3,7 +3,7 @@ name: Deployinga static site to s3 bucket
 on:
   push:
     branches:
-      - main
+      - main # Trigger the workflow on pushes to the main branch no other branches
 
 jobs:
   deploy:
