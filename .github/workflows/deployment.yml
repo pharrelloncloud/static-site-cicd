@@ -16,7 +16,7 @@ jobs:
       - name: Configuring AWS credentials ## Configures the AWS CLI with the provided credentials and region.
         uses: aws-actions/configure-aws-credentials@v4 ## Uses the AWS Actions to set up AWS credentials for AWS CLI commands.
         with:
-          aws-access-key-id: ${{ secrets.AWS-ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
